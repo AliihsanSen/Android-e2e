@@ -68,7 +68,6 @@
             <artifactId>cucumber-reporting</artifactId>
             <version>${cucumber.reporting.version}</version>
         </dependency>
-
         <dependency>
             <groupId>com.github.vladislavsevruk</groupId>
             <artifactId>recursive-assertion-assertj</artifactId>
