@@ -88,7 +88,6 @@ public class ConfigFactory {
         }
     }
 
-
     protected static void configureReducingMethod(final String qualifiedKey, final Configuration configuration, final Properties properties) {
         if (parseBoolean(properties.getProperty(qualifiedKey))) {
             final String reducingMethodName = qualifiedKey.substring(REDUCING_METHOD_PREFIX.length());
