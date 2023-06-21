@@ -14,7 +14,6 @@ import java.io.*;
 import static java.io.File.createTempFile;
 import static java.util.Collections.singletonList;
 
-
 public class PrettyReports implements Plugin, EventListener {
     private final File outputDir;
     private final File jsonFile;
