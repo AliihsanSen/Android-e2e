@@ -33,22 +33,16 @@ public class Driver {
             caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,ConfigReader.getProperty("appPackage"));
             caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,ConfigReader.getProperty("appActivity"));
 
-
-
             if (ConfigReader.getProperty("platformName").equals("Android")) {
                 appiumDriver = new AndroidDriver<>(appiumServerURL,caps);
                 appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
             }else {
-
                 throw new UnsupportedOperationException("Invalid Platform Name " + ConfigReader.getProperty("platformName"));
-
             }
-
         }
-
         return appiumDriver;
     }
-
 
     public static void quitAppiumDriver(){
         if (appiumDriver != null) {
