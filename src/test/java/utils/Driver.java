@@ -25,7 +25,6 @@ public class Driver {
             e.printStackTrace();
         }
 
-
         if (appiumDriver ==null){
 
             DesiredCapabilities caps = new DesiredCapabilities();
