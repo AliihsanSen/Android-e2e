@@ -14,19 +14,17 @@ public class Hooks {
     final Runtime runtime = Runtime.getRuntime();
     @Before
     public void setUp(){
-        //it starts appium server
 
+        //it starts appium server
         appiumServer.start();
 
     }
+
     @After
     public void tearDown(Scenario scenario){
         final byte[] screenshot=((TakesScreenshot) Driver.getAppiumDriver()).getScreenshotAs(OutputType.BYTES);
         if (scenario.isFailed()) {
             scenario.attach(screenshot, "image/png","screenshots");
         }
-
-
-
     }
 }
