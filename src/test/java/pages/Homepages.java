@@ -7,7 +7,6 @@ import utils.Driver;
 import java.time.Duration;
 
 public class Homepages {
-
     public Homepages() {
 
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(25)), this);
