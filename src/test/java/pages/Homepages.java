@@ -12,7 +12,7 @@ import java.time.Duration;
 public class Homepages {
     public Homepages() {
 
-        PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(15)),this);
+        PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(25)),this);
     }
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Vos titres de transport\n" +
