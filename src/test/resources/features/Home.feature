@@ -1,6 +1,5 @@
 @smoke
 @anasayfa
-
 Feature: Anasayfa git ve kontrol yap
 
   Scenario:Anasayfa konrolu
