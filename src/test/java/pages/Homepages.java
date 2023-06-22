@@ -15,15 +15,12 @@ public class Homepages {
         PageFactory.initElements(new AppiumFieldDecorator(Driver.getAppiumDriver(), Duration.ofSeconds(15)),this);
     }
 
-
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Vos titres de transport\n" +
             "où et quand vous voulez !']")
     public MobileElement textTitresDeTransport;
 
-
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Plus tard']")
     public MobileElement btnPlusTard;
-
 
     @AndroidFindBy(xpath = "//android.widget.Image[@text='checked CGU/CGV']")
     public MobileElement btnChecked;
@@ -48,6 +45,5 @@ public class Homepages {
 
     @AndroidFindBy(className = "android.widget.EditText")
     public MobileElement searchReseau;
-
 
 }
