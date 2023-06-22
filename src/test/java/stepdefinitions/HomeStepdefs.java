@@ -20,38 +20,29 @@ public class HomeStepdefs {
 
     Homepages elements = new Homepages();
 
-
     @Given("Anasayfaya git ve kontrol et")
     public void anasayfayaGitVeKontrolEt() throws InterruptedException {
 
-
         String ExpectedText = "Vos titres de transport\n" +
                 "où et quand vous voulez !";
-
         assertTrue(elements.textTitresDeTransport.getText().contains(ExpectedText));
 
     }
-
 
     @When("Plus tard butonuna tikla")
     public void plusTardButonunaTikla() {
 
         elements.btnPlusTard.click();
 
-
     }
 
     @And("Accepter CGU kontrol et")
     public void accepterCGUKontrolEt() {
 
-
         String exptectedTextCGU = "Vous pouvez effectuer des achats jusqu'à 50€, mais pour enregistrer une carte il vous faudra créer un compte.";
-
         assertThat(elements.getTextCGU.getText(), containsString(exptectedTextCGU));
 
-
     }
-
 
     @And("Accepter CGU tikla")
     public void accepterCGUTikla() {
@@ -64,7 +55,6 @@ public class HomeStepdefs {
 
     }
 
-
     @And("Geolocationu kontol et Ok butonuna tikla")
     public void geolocationuKontolEtOkButonunaTikla() {
 
@@ -72,7 +62,6 @@ public class HomeStepdefs {
 
             elements.btnOKJ.click();
         }
-
 
     }
 
@@ -84,14 +73,12 @@ public class HomeStepdefs {
         elements.btnAutoriser.click();
     }
 
-
     @And("Daha sonra bak butonuna tikla")
     public void dahaSonraBakButonunaTikla() {
 
         TouchAction touchAction = new TouchAction(Driver.getAppiumDriver());
         PointOption point = PointOption.point(620, 2150);
         touchAction.tap(point).perform();
-
 
     }
 
@@ -100,7 +87,6 @@ public class HomeStepdefs {
 
         elements.searchReseau.click();
         elements.searchReseau.sendKeys("Atoumod");
-
 
     }
 }
