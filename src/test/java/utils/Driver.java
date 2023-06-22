@@ -25,24 +25,33 @@ public class Driver {
             e.printStackTrace();
         }
 
+
         if (appiumDriver ==null){
 
             DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME,ConfigReader.getProperty("automationName"));
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME,ConfigReader.getProperty("platformName"));
+            // caps.setCapability(MobileCapabilityType.PLATFORM_VERSION,ConfigReader.getProperty("platformVersion"));
+            // caps.setCapability(MobileCapabilityType.DEVICE_NAME,ConfigReader.getProperty("deviceName"));
             caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,ConfigReader.getProperty("appPackage"));
             caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,ConfigReader.getProperty("appActivity"));
+
+
 
             if (ConfigReader.getProperty("platformName").equals("Android")) {
                 appiumDriver = new AndroidDriver<>(appiumServerURL,caps);
                 appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
             }else {
+
                 throw new UnsupportedOperationException("Invalid Platform Name " + ConfigReader.getProperty("platformName"));
+
             }
+
         }
+
         return appiumDriver;
     }
+
 
     public static void quitAppiumDriver(){
         if (appiumDriver != null) {
