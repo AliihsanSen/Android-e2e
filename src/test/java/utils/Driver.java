@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class Driver {
 
     private static AppiumDriver<MobileElement>appiumDriver;
-
     public static AppiumDriver getAppiumDriver() {
 
         URL appiumServerURL = null;
@@ -24,7 +23,6 @@ public class Driver {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
 
         if (appiumDriver ==null){
 
@@ -36,8 +34,6 @@ public class Driver {
             caps.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,ConfigReader.getProperty("appPackage"));
             caps.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,ConfigReader.getProperty("appActivity"));
 
-
-
             if (ConfigReader.getProperty("platformName").equals("Android")) {
                 appiumDriver = new AndroidDriver<>(appiumServerURL,caps);
                 appiumDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -48,10 +44,8 @@ public class Driver {
             }
 
         }
-
         return appiumDriver;
     }
-
 
     public static void quitAppiumDriver(){
         if (appiumDriver != null) {
